@@ -36,13 +36,3 @@ fly console
 ### Making an app public
 
 See `fly.toml` - there are lines commented out at the bottom that make things public. Think about whether to remove `TailscaleAuthMiddleware` or nah.
-
-## TODO:
-
-- [ ] figure out testing:
-  - want to use https://github.com/hackebrot/pytest-cookies, but installing it fails with an error installing pyyaml, see e.g. https://github.com/python-poetry/poetry/issues/8287, which I can't figure out a workout for, so punting on testing for now
-- [ ] automate admin upgrade
-- [ ] try to fix the `node-1`, `node-2`, etc. thing
-  - Fly doesn't clean up old apps before deploying new ones (and doesn't have a deployment startegy that does), so when the new app bootstraps Tailscale sees it as a duplicate and gives it a unique name. Is there a fix/workaround?
-- [ ] stream db to litestream as backup/sync
-- [ ] automate initial fly launch config - can probably prompt for authkey, domain, and execute from the post-gen hook
