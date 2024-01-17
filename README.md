@@ -6,6 +6,8 @@ Sometimes I have tiny little personal web apps I want to write but the overhead 
 - Deployed to Fly
 - Behind Tailscale, piggybacking on Tailscale auth
 
+These end up being private apps -- no public interface, only accessible on my Tailnet. In other words this is sorta a replaecment for running things in a homelab or similar. A personal Intranet, if you will.
+
 Since this is pretty specific to _me_ and the way _I_ want to write things, I'm unlikely to accept PRs. Feel free to ask first by opening and issue or emailing me or something! I don't want you to waste your time with a PR that I won't accept.
 
 Excception: if there's something on my [TODO](#todo) list below, heck yeah I'll take a PR for it!
