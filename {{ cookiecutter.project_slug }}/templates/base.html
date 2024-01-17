@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load tailwind_cli %}
+    {% tailwind_css %}
+    {% load static %}
+    <script src="{% static "htmx-1.9.10.min.js" %}"></script>
+    <title>{% block title %}{% endblock title %}</title>
+    {% block extrahead %}{% endblock extrahead %}
+  </head>
+  <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+      <main class="container pt-4 mx-auto">
+        {% block content %}{% endblock content %}
+      </main>
+    {% block afterbody %}{% endblock afterbody %}
+  </body>
+</html>

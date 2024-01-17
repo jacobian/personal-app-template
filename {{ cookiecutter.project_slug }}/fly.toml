@@ -1,0 +1,33 @@
+app = "{{ cookiecutter.fly_app_name }}"
+primary_region = "sea"
+console_command = "/code/manage.py shell"
+
+[build]
+
+[env]
+  DATABASE_URL = "sqlite:////data/db.sqlite3"
+
+[[mounts]]
+  source = "{{ cookiecutter.fly_app_name }}_data"
+  destination = "/data"
+  auto_extend_size_threshold = 0
+  initial_size = 1
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024
+
+# --- to make this into a public service:
+
+# [http_service]
+#   internal_port = 8000
+#   force_https = true
+#   auto_stop_machines = true
+#   auto_start_machines = true
+#   min_machines_running = 0
+#   processes = ["app"]
+#
+# [[statics]]
+#   guest_path = "/code/static"
+#   url_prefix = "/static/"

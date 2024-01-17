@@ -1,0 +1,19 @@
+set dotenv-load := true
+
+default: 
+    just --list
+
+init:
+    poetry install
+    poetry run python manage.py migrate
+    echo "SECRET_KEY=$(openssl rand -hex 32)" >> .env
+
+serve:
+    poetry run python manage.py tailwind runserver
+
+build:
+    poetry run python manage.py tailwind build
+    poetry run python manage.py collectstatic --noinput
+
+serve-prod: build
+    DEBUG=false poetry run python manage.py runserver

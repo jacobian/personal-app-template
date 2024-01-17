@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "{{ cookiecutter.project_slug }}"
+version = "0.1.0"
+description = ""
+authors = ["Jacob Kaplan-Moss <jacob@jacobian.org>"]
+readme = "README.md"
+packages = [{include = "{{ cookiecutter.project_slug }}"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0"
+django-tailwind-cli = "^2.8.1"
+django-environ = "^0.11.2"
+django-browser-reload = "^1.12.1"
+whitenoise = "^6.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

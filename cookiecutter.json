@@ -1,0 +1,9 @@
+{
+    "project_slug": "",
+    "app_name": "{{ cookiecutter.project_slug }}",
+    "fly_app_name": "{{ cookiecutter.app_name }}",
+    "_copy_without_render": [
+        "templates/*"
+    ]
+}
+  
