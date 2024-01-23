@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "personal-app-template"
+version = "0.1.0"
+description = ""
+authors = ["Jacob Kaplan-Moss <jacob@jacobian.org>"]
+license = "BSD"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-cookies = "^0.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+python_files = "tests.py test_*.py"
